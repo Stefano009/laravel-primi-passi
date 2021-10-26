@@ -14,5 +14,20 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    $data = [
+            'pacco' => [
+                    'salsiccia',
+                    '\'nduja',
+                    'soppressata',
+                    'pancetta arrotolata',
+                    'guanciale'
+            ]
+            ];
+    return view('homepage', $data);
+})->name('home');
+Route::get('/about', function () {
+    return view('about');
+})->name('us');
+Route::get('/contacts', function () {
+    return view('contacts');
+})->name('them');
